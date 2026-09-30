@@ -16,28 +16,22 @@ $pdo = $database->connect();
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Spinly</title>
 </head>
 <body>
-    <form action="./actions/add_challenge.php" method="post" >
-
-
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <label class="input-group-text" for="item">Item</label>
-        </div>
-        <input type="text" class="form-control" id="item" placeholder="Item" name="item" maxlength="20" required>
-    </div>
-
-  
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-    
+    <main class="container">
+        <h1>Spinly</h1>
+        <form action="./actions/add_challenge.php" method="post">
+            <label for="item">Yeni meydan okuma</label>
+            <input type="text" id="item" name="item" placeholder="Bir isim yaz" maxlength="20" aria-describedby="item-hint" required>
+            <p id="item-hint">En fazla 20 karakter.</p>
+            <button type="submit">Ekle</button>
+        </form>
+    </main>
 </body>
 </html>
