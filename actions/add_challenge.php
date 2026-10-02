@@ -25,8 +25,10 @@ require_once __DIR__ . '/../bootstrap/bootstrap.php';
 $challenge = new Challenge($item, $pdo);
 if ($challenge->add($item)) {
     echo 'Challenge added';
+    header('Location: ../index.php');
+exit;
 } else {
     http_response_code(500);
     echo 'Challenge could not be added';
 }
-?>
+

@@ -15,13 +15,21 @@ class Challenge{
         
     }
     public function getAll(){
-        $stmt=$this->pdo->prepare('SELECT * FROM challenges(id)');
-        return $stmt->execute();
+        $stmt=$this->pdo->prepare('SELECT * FROM challenges');
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
         
     }
+        public function delet( int $item){
+        $stmt=$this->pdo->prepare('DELETE FROM challenges WHERE id =?');
+        return $stmt->execute([$item]);
+        
 
 
 }
+
+}
+
 
 
 ?>
